@@ -69,7 +69,6 @@ html {
 
 body {
   width: 100%;
-  max-width: 144rem;
   box-sizing: border-box;
   height: 100vh;
   background-color: var(--main-background);
@@ -139,8 +138,8 @@ body {
 }
 
 .screen__previous {
-  color: var(--white);
-  font-size: 1.5rem;
+  color: rgba(var(--white), 0.2);
+  font-size: 1.3rem;
 }
 
 .screen__current {
