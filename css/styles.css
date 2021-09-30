@@ -1,4 +1,57 @@
 :root {
+  /* THEME 1 */
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+
+  --key-background: rgb(99, 112, 151);
+  --key-shadow: hsl(224, 28%, 35%);
+  --key-background-toggle: hsl(6, 63%, 50%);
+  --key-shadow-red: hsl(6, 70%, 34%);
+
+  --light-gray-orange: hsl(30, 25%, 89%);
+  --gray-orange: hsl(28, 16%, 65%);
+
+  --text-blue: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.theme-2 {
+  /* THEME 1 */
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+
+  --key-background: hsl(185, 42%, 37%);
+  --key-shadow: hsl(185, 58%, 25%);
+  --key-background-toggle: hsl(25, 98%, 40%);
+  --key-shadow-red: hsl(25, 99%, 27%);
+
+  --light-gray-orange: hsl(45, 7%, 89%);
+  --gray-orange: hsl(35, 11%, 61%);
+
+  --text-blue: hsl(60, 10%, 19%);
+  --white: hsl(0, 0, 100%);
+}
+
+.theme-3 {
+  /* THEME 1 */
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+
+  --key-background: hsl(281, 89%, 26%);
+  --key-shadow: hsl(285, 91%, 52%);
+  --key-background-toggle: hsl(176, 100%, 44%);
+  --key-shadow-red: hsl(177, 92%, 70%);
+
+  --light-gray-orange: hsl(268, 47%, 21%);
+  --gray-orange: hsl(290, 70%, 36%);
+
+  --text-blue: hsl(52, 100%, 62%);
+  --white: hsl(52, 100%, 62%);
+
+  --button: ;
 }
 
 *,
@@ -19,7 +72,7 @@ body {
   max-width: 144rem;
   box-sizing: border-box;
   height: 100vh;
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--main-background);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +91,7 @@ body {
 }
 
 .header__primary-title {
-  color: white;
+  color: var(--white);
   text-transform: lowercase;
   flex: 3 0 0;
 }
@@ -47,20 +100,28 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 4.1rem;
 }
 
 .header__theme-title {
-  margin-right: 1.5rem;
+  margin-right: 1.9rem;
   text-transform: uppercase;
-  color: white;
+  color: var(--white);
+  align-self: flex-end;
 }
 
 .header__numbers {
-  color: #fff;
-  width: 4rem;
+  color: var(--white, 0.8);
+  width: 3rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header__number {
+  cursor: pointer;
 }
 
 .screen {
@@ -71,14 +132,14 @@ body {
   padding: 1rem;
   border-radius: 10px;
   height: 9rem;
-  background-color: hsl(224, 36%, 15%);
+  background-color: var(--screen-background);
   width: 100%;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   word-wrap: break-word;
 }
 
 .screen__previous {
-  color: rgb(255, 255, 255, 0.8);
+  color: var(--white);
   font-size: 1.5rem;
 }
 
@@ -91,7 +152,7 @@ body {
   height: 17px;
   margin: 0.3em;
   border-radius: 15px;
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--toggle-background);
   position: relative;
   z-index: 3;
 }
@@ -100,7 +161,7 @@ body {
   content: "";
   position: absolute;
   width: 17px;
-  background-color: red;
+  background-color: var(--key-background-toggle);
   height: 17px;
   left: 1.1rem;
   border-radius: 50%;
@@ -113,16 +174,16 @@ body {
   align-content: center;
   justify-content: center;
   padding: 2rem 1rem;
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--toggle-background);
   margin-top: 2rem;
   border-radius: 10px;
   box-shadow: 3px 4px 10px rgb(0, 0, 0, 0.4);
 }
 .calculator-button {
   text-align: center;
-  color: hsl(221, 14%, 31%);
+  color: var(--text-blue);
   font-family: inherit;
-  background-color: hsl(30, 25%, 89%);
+  background-color: var(--light-gray-orange);
   font-size: 2.5rem;
   width: 7.7rem;
   outline: none;
@@ -130,13 +191,13 @@ body {
   cursor: pointer;
   border: 0;
   border-radius: 0.5rem;
-  box-shadow: 0px 3px 0px 0px hsl(28, 16%, 65%);
+  box-shadow: 0px 3px 0px 0px var(--gray-orange);
   margin: 0.9rem auto;
 }
 
 .calculator-button--reset {
-  background-color: hsl(225, 21%, 49%);
-  box-shadow: 0px 3px 0px 0px hsl(224, 28%, 35%);
+  background-color: var(--key-background);
+  box-shadow: 0px 3px 0px 0px var(--key-shadow);
   color: white;
   width: 90%;
   grid-column: 1 / 3;
@@ -144,18 +205,65 @@ body {
 .calculator-button--delete {
   font-size: 1.5rem;
   color: white;
-  background-color: hsl(225, 21%, 49%);
-  box-shadow: 0px 3px 0px 0px hsl(224, 28%, 35%);
+  background-color: var(--key-background);
+  box-shadow: 0px 3px 0px 0px var(--key-shadow);
 }
 
 .calculator-button--equal {
   color: white;
-  background-color: hsl(6, 63%, 50%);
-  box-shadow: 0px 3px 0px 0px hsl(6, 70%, 34%);
+  background-color: var(--key-background-toggle);
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-red);
   width: 90%;
   grid-column: 3/ -1;
 }
 
+#toggle-container {
+  background-color: var(--screen-background);
+  border-radius: 20px;
+  height: 1.5rem;
+  width: 110%;
+  padding: 0.3rem 0;
+  position: relative;
+}
+
+.toggle-switch {
+  z-index: 3;
+  cursor: pointer;
+  height: 1.1rem;
+  width: 1.1rem;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--key-background-toggle);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.toggle-switch-middle {
+  z-index: 3;
+  cursor: pointer;
+  height: 1.1rem;
+  width: 1.1rem;
+  left: 35%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--key-background-toggle);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.toggle-switch-end {
+  z-index: 3;
+  cursor: pointer;
+  height: 1.1rem;
+  width: 1.1rem;
+  left: 65%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--key-background-toggle);
+  border-radius: 50%;
+  position: absolute;
+}
 @media only screen and (max-width: 26em) {
   .container {
     max-width: 26rem;
@@ -163,9 +271,9 @@ body {
 
   .calculator-button {
     text-align: center;
-    color: hsl(221, 14%, 31%);
+    color: var(--text-blue);
     font-family: inherit;
-    background-color: hsl(30, 25%, 89%);
+    background-color: var(--light-gray-orange);
     font-size: 2rem;
     width: 5rem;
     outline: none;
@@ -173,12 +281,12 @@ body {
     cursor: pointer;
     border: 0;
     border-radius: 0.5rem;
-    box-shadow: 0px 3px 0px 0px hsl(28, 16%, 65%);
+    box-shadow: 0px 3px 0px 0px var(--gray-orange);
     margin: 0.9rem auto;
   }
   .calculator-button--reset {
-    background-color: hsl(225, 21%, 49%);
-    box-shadow: 0px 3px 0px 0px hsl(224, 28%, 35%);
+    background-color: var(--key-background);
+    box-shadow: 0px 3px 0px 0px var(--key-shadow);
     color: white;
     width: 90%;
     grid-column: 1 / 3;
@@ -187,14 +295,14 @@ body {
   .calculator-button--delete {
     font-size: 1.5rem;
     color: white;
-    background-color: hsl(225, 21%, 49%);
-    box-shadow: 0px 3px 0px 0px hsl(224, 28%, 35%);
+    background-color: var(--key-background);
+    box-shadow: 0px 3px 0px 0px var(--key-shadow);
   }
 
   .calculator-button--equal {
     color: white;
-    background-color: hsl(6, 63%, 50%);
-    box-shadow: 0px 3px 0px 0px hsl(6, 70%, 34%);
+    background-color: var(--key-background-toggle);
+    box-shadow: 0px 3px 0px 0px var(--key-shadow-red);
     width: 90%;
     grid-column: 3/ -1;
   }

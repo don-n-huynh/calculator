@@ -97,6 +97,35 @@ const deleteButton = document.querySelector("[data-delete]");
 const resetButton = document.querySelector("[data-reset]");
 const prevCalculation = document.querySelector("[data-previous]");
 const currCalculation = document.querySelector("[data-current]");
+const body = document.querySelector("body");
+const toggleTheme = document.getElementById("toggle-container");
+const toggleSwitch = document.querySelector(".toggle-switch");
+var theme = 1;
+
+toggleTheme.addEventListener("click", () => {
+  theme++;
+  switch (theme) {
+    case 2:
+      toggleSwitch.classList.remove("toggle-switch");
+      toggleSwitch.classList.add("toggle-switch-middle");
+      body.classList.add("theme-2");
+      break;
+    case 3:
+      toggleSwitch.classList.remove("toggle-switch-middle");
+      toggleSwitch.classList.add("toggle-switch-end");
+      body.classList.remove("theme-2");
+      body.classList.add("theme-3");
+      break;
+    case 4:
+      toggleSwitch.classList.remove("toggle-switch-end");
+      toggleSwitch.classList.add("toggle-switch");
+      theme = 1;
+      body.classList.remove("theme-3");
+      break;
+  }
+
+  console.log("theme: ", theme);
+});
 
 const calculator = new Calculator(prevCalculation, currCalculation);
 
