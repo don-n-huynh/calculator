@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <header class="header">
+        <h1 class="header__primary-title">Calc</h1>
+
+        <div class="header__selection">
+          <p class="header__theme-title">Theme</p>
+          <div class="header__numbers">
+            <p class="header__number">1</p>
+            <p class="header__number">2</p>
+            <p class="header__number">3</p>
+          </div>
+        </div>
+      </header>
+      <!-- SCREEN -->
+      <div class="screen">
+        <div data-previous class="screen__previous"></div>
+        <div data-current class="screen__current"></div>
+      </div>
+      <!-- CALCULATOR -->
+
+      <div class="calculator-buttons">
+        <button data-number class="calculator-button">7</button>
+        <button data-number class="calculator-button">8</button>
+        <button data-number class="calculator-button">9</button>
+        <button data-delete class="calculator-button calculator-button--delete">
+          DEL
+        </button>
+        <button data-number class="calculator-button">4</button>
+        <button data-number class="calculator-button">5</button>
+        <button data-number class="calculator-button">6</button>
+        <button data-operation class="calculator-button">+</button>
+        <button data-number class="calculator-button">1</button>
+        <button data-number class="calculator-button">2</button>
+        <button data-number class="calculator-button">3</button>
+        <button data-operation class="calculator-button">-</button>
+        <button data-number class="calculator-button">.</button>
+        <button data-number class="calculator-button">0</button>
+        <button data-operation class="calculator-button">/</button>
+        <button data-operation class="calculator-button">x</button>
+        <button data-reset class="calculator-button calculator-button--reset">
+          RESET
+        </button>
+        <button data-equals class="calculator-button calculator-button--equal">
+          =
+        </button>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
